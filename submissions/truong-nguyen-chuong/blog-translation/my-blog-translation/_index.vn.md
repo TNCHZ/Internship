@@ -80,6 +80,7 @@ Khách hàng sử dụng AWS Region, kết hợp với các vị trí hybrid và
 
 
 ![hinh1](images/hinh1.png)
+
 _Hình 1: Kiến trúc khả năng phục hồi dựa trên AWS Region sử dụng nhiều Availability Zone._
 
 Sơ đồ trên cho thấy cái nhìn tổng quan về cách sử dụng các AZ để đạt được khả năng chịu lỗi. AWS quản lý kết nối và đảm bảo sự tách biệt vật lý giữa các vị trí, giúp người dùng cuối tập trung vào workload. Workload ở một Availability Zone có thể giao tiếp với workload ở Availability Zone khác bằng kết nối nội bộ. Không cần cấu hình bổ sung.

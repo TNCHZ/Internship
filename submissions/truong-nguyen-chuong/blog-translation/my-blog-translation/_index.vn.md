@@ -95,6 +95,7 @@ Mô hình triển khai này đi kèm với các cân nhắc kiến trúc cụ th
 
 
 ![hinh2](images/hinh2.png)
+
 _Hình 2: Kiến trúc khả năng phục hồi thay thế sử dụng Local Zone và Wavelength Zone._
 
 Tóm tắt luồng lưu lượng North-South:
@@ -116,6 +117,7 @@ Khả năng lưu lượng di chuyển theo hướng East-West để đồng bộ
 
 
 ![hinh3](images/hinh3.png)
+
 _Hình 3: Đi qua nhiều Service Link – dẫn đến lưu lượng bị drop._
 
 Hiện tại, lưu lượng Local Zone được coi là đến từ mạng không phải viễn thông và do đó sẽ bị chặn bởi firewall perimeter. Để kích hoạt East-West traversal giữa Local Zone Internet Gateway (IGW) và Wavelength Zone CGW, chúng ta phải dựa vào tunnel VPN SSL hoặc TLS được khởi tạo từ Wavelength Zone. Cần triển khai thiết bị bảo mật tại Local Zone và Wavelength Zone (ví dụ: Fortinet FortiGate Next-Generation Firewall). Ngoài ra, phải cấu hình more-specific routes (MSR) để sử dụng ENI của nó làm next-hop.
@@ -142,6 +144,7 @@ Ví dụ sử dụng hai VPC, một tại mỗi vị trí. Điều này cần th
 
 
 ![hinh4](images/hinh4.png)
+
 _Hình 4: Direct Connect cho East-West traversal giữa AWS Local Zone và Outposts._
 
 Một cách tiếp cận thay thế cho Hình 4, nếu mong muốn một VPC duy nhất, là triển khai Security Appliance ở cả hai bên và thiết lập tunnel VPN. Một tuyến đường cụ thể hơn có thể được tạo ở mỗi bên bằng cách sử dụng ENI của appliance. Ưu điểm của cách tiếp cận này, với chi phí quản lý bổ sung, là mã hóa nội tại được cung cấp bởi tunnel VPN.
@@ -150,6 +153,7 @@ Khách hàng không muốn thiết lập Direct Connect giữa các site và kh�
  
 
 ![hinh5](images/hinh5.png)
+
 _Hình 5: Lưu lượng đi qua internet với một VPC duy nhất và Security Appliance._
 
 ## 4. Triển khai trên Wavelength Zone và Outpost
@@ -161,6 +165,7 @@ Có hai tùy chọn cần xem xét ở đây:
 
 
 ![hinh6](images/hinh6.png)
+
 _Hình 6: Giảm thiểu lưu lượng giữa Outpost và Wavelength Zone bằng cách tận dụng Megaport._
 
 
